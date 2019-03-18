@@ -1,78 +1,82 @@
-body{
-    background: #e2e1e0;
+body {
+  background: #e2e1e0;
 }
 
-#parent_div_1{
-    width:45%;
-    height:500px;
-    border:1px solid black;
-    margin-right:10px;
-    float:left;
-    overflow-y: scroll;
+#parent_div_1 {
+  width: 45%;
+  height: 500px;
+  border: 1px solid black;
+  margin-right: 10px;
+  float: left;
+  overflow-y: scroll;
 }
 
-#parent_div_2{
-    width:45%;
-    height:500px;
-    border:1px solid black;
-    margin-right:10px;
-    float:right;
-    overflow-y: scroll;
+#parent_div_2 {
+  width: 45%;
+  height: 500px;
+  border: 1px solid black;
+  margin-right: 10px;
+  float: right;
+  overflow-y: scroll;
 }
 
 .example-card {
-    width: 200px !important;
-    height: 200px !important;
-    text-overflow: ellipsis;
-    /* overflow: auto; */
+  width: 200px !important;
+  height: 200px !important;
+  text-overflow: ellipsis;
+  /* overflow: auto; */
 }
-  
+
 .example-header-image {
-    background-image: url('http://clipart-library.com/data_images/567140.gif');
-    background-size: cover;
+  background-image: url('http://clipart-library.com/data_images/567140.gif');
+  background-size: cover;
 }
 
 .cdk-drop-dragging .cdk-drag {
-    transition: transform 500ms cubic-bezier(0, 0, 0.2, 1);
-  }
-.cdk-drag-animating {
-    transition: transform 550ms cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 500ms cubic-bezier(0, 0, 0.2, 1);
 }
+
+.cdk-drag-animating {
+  transition: transform 550ms cubic-bezier(0, 0, 0.2, 1);
+}
+
 .cdk-drag-placeholder {
-    /* background: rgba(0, 0, 0, .2); */
+  /* background: rgba(0, 0, 0, .2); */
 }
 
 #parent_div_1:after {
-    content: "";
-    background-color: #000;
-    position: absolute;
-    width: 2px;
-    height: 90%;
-    top: 10px;
-    left: 50%;
-    display: block;
+  content: "";
+  background-color: #000;
+  position: absolute;
+  width: 2px;
+  height: 90%;
+  top: 10px;
+  left: 50%;
+  display: block;
 }
 
 .containers {
-    background: #fff;
+  background: #fff;
 }
 
-.example-card:hover,.card-picture:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+.example-card:hover,
+.card-picture:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.minimize-height{
-    max-height: 150px !important;
-    margin-right: 15px !important;
-    margin-left: 15px !important;
+.minimize-height {
+  max-height: 150px !important;
+  margin-right: 15px !important;
+  margin-left: 15px !important;
 }
 
 img {
-    width: 100%;
-    margin-bottom: 18%;
-  }
+  width: 100%;
+  margin-bottom: 18%;
+}
+
 .card-picture {
-    width: 23%;
-    margin-bottom: 2%;
-    max-height: 300px;
+  width: 23%;
+  margin-bottom: 2%;
+  max-height: 300px;
 }
