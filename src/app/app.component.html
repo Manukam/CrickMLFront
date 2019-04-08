@@ -4,13 +4,13 @@
 
 <div id='parent_div_1' cdkDropList #pool="cdkDropList" [cdkDropListData]="playerPool" [cdkDropListConnectedTo]="[selected]"
   (cdkDropListDropped)="dropped($event)" fxLayout="row wrap" fxLayoutGap="5%" fxLayoutAlign="flex-start">
-  <mat-card class="card-picture" fxFlex="0 1 calc(33.3% - 32px)" *ngFor="let player of playerPool" cdkDrag>
+  <mat-card class="card-picture" fxFlex="0 1 calc(33.3% - 32px)" *ngFor="let player of playerPool; let i = index" cdkDrag>
     <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
-      <span fxFlex="80%">{{player}}</span>
+      <span fxFlex="80%">{{player.player_name}}</span>
       <mat-icon fxFlex="10%">mode_edit</mat-icon>
       <mat-icon fxFlex="10%">delete</mat-icon>
     </mat-card-title>
-    <img mat-card-image [src]=url>
+    <img mat-card-image src='../assets/images/{{player.id}}.png'>
   </mat-card>
 </div>
 
@@ -18,13 +18,13 @@
 
 <div id='parent_div_2' cdkDropList #selected="cdkDropList" [cdkDropListData]="selectedPlayers" [cdkDropListConnectedTo]="[pool]"
   (cdkDropListDropped)="dropped($event)" fxLayout="row wrap" fxLayoutGap="5%" fxLayoutAlign="flex-start">
-  <mat-card class="card-picture" fxFlex="0 1 calc(33.3% - 32px)" *ngFor="let player of selectedPlayers" cdkDrag>
+  <mat-card class="card-picture" fxFlex="0 1 calc(33.3% - 32px)" *ngFor="let player of selectedPlayers; let i = index" cdkDrag>
     <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
-      <span fxFlex="80%">{{player}}</span>
+      <span fxFlex="80%">{{player.player_name}}</span>
       <mat-icon fxFlex="10%">mode_edit</mat-icon>
       <mat-icon fxFlex="10%">delete</mat-icon>
     </mat-card-title>
-    <img mat-card-image [src]=url>
+    <img mat-card-image src='../assets/images/{{player.id}}.png'>
   </mat-card>
 </div>
 

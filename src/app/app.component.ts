@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CrickBackService } from '../app/crick-back.service';
 
 @Component({
   selector: 'app-root',
@@ -7,18 +8,18 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor(public rest: CrickBackService) { 
+    this.getAllPlayers();    
+  }
+
   title = 'CrickMLFront';
 
-  url = 'http://clipart-library.com/data_images/567140.gif';
+  url = '../assets/images/';
 
-  playerPool = [
-    'Kusal Mendis',
-    'Suranga Lakmal'
-  ];
+  playerPool: any = [];
 
   selectedPlayers = [
-    'Dimuth Karunarathne',
-    'Akila Dananjaya'
   ];
 
   dropped(event: CdkDragDrop<string[]>) {
@@ -37,5 +38,12 @@ export class AppComponent {
         event.currentIndex
       );
     }
+  }
+
+  getAllPlayers() {
+    this.rest.getPlayers().subscribe((data: {}) => {
+      console.log(data);
+      this.playerPool = data;
+    });
   }
 }
