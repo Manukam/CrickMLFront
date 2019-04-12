@@ -62,16 +62,15 @@ export class AppComponent {
 
     this.rest.postPlayers(this.players).subscribe((data: {}) => {
       console.log(data);
+      this.openDialog(this.selectedPlayers, data);
     });
-    this.openDialog();
-
   }
 
-  openDialog(): void {
+  openDialog(poolPlayers, selectedPlayers): void {
     const dialogRef = this.dialog.open(ResultsComponent, {
       width: '100%',
       height: '100%',
-      // data: {name: this.name, animal: this.animal}
+      data: {players: poolPlayers, results: selectedPlayers}
     });
   }
 }
