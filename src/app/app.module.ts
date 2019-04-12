@@ -34,6 +34,7 @@ import { ResultsComponent } from './results/results.component';
     BrowserAnimationsModule
   ],
   providers: [],
+  entryComponents: [ResultsComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

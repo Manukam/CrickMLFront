@@ -2,13 +2,15 @@ import { Component, Inject } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { CrickBackService } from '../app/crick-back.service';
 import { ViewEncapsulation } from '@angular/compiler/src/core';
+import { ResultsComponent } from './results/results.component';
+import { MatDialog } from '@angular/material';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  
+
 })
 export class AppComponent {
 
@@ -66,10 +68,9 @@ export class AppComponent {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(ResultsModel, {
+    const dialogRef = this.dialog.open(ResultsComponent, {
       width: '100%',
       height: '100%',
-      // panelClass: 'results-model.css'
       // data: {name: this.name, animal: this.animal}
     });
   }

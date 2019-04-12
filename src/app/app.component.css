@@ -1,5 +1,5 @@
 body {
-  background: #e2e1e0;
+  background: #e2e1e0 !important;
 }
 
 #parent_div_1 {
@@ -56,7 +56,7 @@ body {
 }
 
 .containers {
-  background: #fff;
+  background: #fff !important;
 }
 
 .example-card:hover,
