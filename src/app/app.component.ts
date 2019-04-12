@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { CrickBackService } from '../app/crick-back.service';
+import { ViewEncapsulation } from '@angular/compiler/src/core';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  
 })
 export class AppComponent {
 
-  constructor(public rest: CrickBackService) {
+  constructor(public rest: CrickBackService, public dialog: MatDialog) {
     this.getAllPlayers();
   }
 
@@ -58,6 +61,17 @@ export class AppComponent {
     this.rest.postPlayers(this.players).subscribe((data: {}) => {
       console.log(data);
     });
+    this.openDialog();
 
   }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ResultsModel, {
+      width: '100%',
+      height: '100%',
+      // panelClass: 'results-model.css'
+      // data: {name: this.name, animal: this.animal}
+    });
+  }
 }
+
