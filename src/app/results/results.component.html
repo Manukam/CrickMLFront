@@ -1,7 +1,5 @@
 <div id="screen">
-  <!-- {{playerList[0].player_name}} -->
-  <!-- Backstage Controlls -->
-  <div *ngFor="let cricketer of playerList; let i = index">
+  <div *ngFor="let cricketer of playerList; let i = index" (click)="playerSelect(cricketer.id)">
     <input type="radio" name="contatcs" id="contact-{{cricketer.id}}">
     <div class="item">
       <div class="portrait" id="P-{{cricketer.id}}"></div>
@@ -21,3 +19,70 @@
 
   <div id="background"></div>
 </div>
+<div class="results-page">
+
+  <!-- <div class="selected-players">Selected Players <i class="fas fa-level-down-alt"></i></div> -->
+  <div class="border-wrap-right" id="overflow-style">
+    <div id='parent_div_2'>
+      <mat-card class="card-picture">
+        <mat-card-title>
+          <img mat-card-image src='../assets/images/1.png' class="results-image round"> <br>
+          <span class="results-title">{{currentPlayerName}}</span>
+          <mat-icon><i class="fas fa-eye"></i></mat-icon>
+
+          <!-- <mat-icon fxFlex="10%">del ete</mat-icon> -->
+        </mat-card-title>
+        <!-- <img mat-card-image src='../assets/images/1.png' class="round"> -->
+
+        <div id="pointdisplay">
+          <div class="pointer pointer1"></div>
+          <div class="pointer pointer2"></div>
+          <div class="pointer pointer3"></div>
+          <div class="pointer pointer4"></div>
+          <div class="cover"></div>
+          <p id="point-p">{{(crickmlScore * 100)}}</p>
+        </div>
+
+      </mat-card>
+    </div>
+  </div>
+  <br>
+  <!-- <button (click)='clicked()'>Animate</button> -->
+  <div class="three-scores">
+    <div>
+      <mat-card class="three-scores-1">
+
+        <mat-card-title>
+          Experience Score
+        </mat-card-title>
+        {{overallScore}}
+      </mat-card>
+    </div>
+
+    <div>
+      <mat-card class="three-score-2">
+        <mat-card-title>
+          Recent Score
+        </mat-card-title>
+        {{recentScore}}
+      </mat-card>
+    </div>
+
+    <div>
+      <mat-card class="three-scores-3">
+        <mat-card-title>
+          Away Score
+        </mat-card-title>
+        {{awayScore}}
+      </mat-card>
+    </div>
+
+    <div>
+        <mat-card class="three-scores-3">
+          <mat-card-title>
+            Home Score
+          </mat-card-title>
+          {{homeScore}}
+        </mat-card>
+      </div>
+  </div>

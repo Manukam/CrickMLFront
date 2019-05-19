@@ -18,7 +18,7 @@ body {
 
 input {
   position: absolute;
-  visibility: hidden; /**/
+  visibility: hidden; 
 }
 
 #background {
@@ -29,6 +29,7 @@ input {
   background-position: center;
   -webkit-filter: blur(3px);
   z-index: 0;
+  border: 1px solid black;
 }
 
 label {
@@ -47,7 +48,7 @@ label {
   height: 6em;
   padding: 1px 0;
   
-  background-color: rgba(0,0,0,.6); /**/
+  background-color: rgba(0,0,0,.6); 
   z-index: 3;
   overflow: hidden;
   -webkit-transition: background-color .7s;
@@ -162,14 +163,13 @@ label {
   background-color: black;
 }
 
-/* Genreal Interaction */
 .item:hover > .portrait:after {
   border: 1px solid rgba(116,226,21, 1);
   box-shadow: 0 0 3px rgba(116,226,21, .5);
 }
 
 input:checked + .item {
-  background-color: rgba(0,0,0, .3); /**/
+  background-color: rgba(0,0,0, .3); 
   padding-top: 0px;
   border-top: 1px solid rgba(255,255,255, .1);
   border-bottom: 1px solid rgba(0,0,0, .5);
@@ -180,7 +180,6 @@ input:checked + .item > .details {
   z-index: 2;
 }
 
-/* Local Details */
 
 #chris-lacy {
   background-image: url(https://lh3.googleusercontent.com/-_RbzbA4U-AY/T3le0hEjh5I/AAAAAAAAPbU/H6aRDFguJMY/s207-p-no/profile_pic.png);
@@ -213,7 +212,6 @@ input:checked + .item > .details {
   background-image: url(https://lh6.googleusercontent.com/-iJYfqnaDuxg/Uc-C9u0u70I/AAAAAAAB4wI/TTxYpcfPTW8/s747-no/DSC_5282.JPG);
 }
 
-/* Local Interactions */
 #contact-1:checked ~ #background {
   background-image: url(https://lh3.googleusercontent.com/-_RbzbA4U-AY/T3le0hEjh5I/AAAAAAAAPbU/H6aRDFguJMY/s207-p-no/profile_pic.png);
 }
@@ -243,4 +241,128 @@ input:checked + .item > .details {
 }
 #contact-10:checked ~ #background {
   background-image: url(https://lh6.googleusercontent.com/-iJYfqnaDuxg/Uc-C9u0u70I/AAAAAAAB4wI/TTxYpcfPTW8/s747-no/DSC_5282.JPG);
+}
+
+.results-page{
+  float: right;
+  width: 900px;
+  height: 900px;
+  /* margin-left: 415px */
+  border: 1px solid black;
+}
+
+.results-image{
+  width: 100px;
+  margin-left:350px; 
+}
+
+.round{
+  border-radius: 50%;
+  /* margin-left: -2px; */
+}
+
+.results-title{
+  margin-left: 300px
+}
+
+#pointdisplay {
+  font-size: 100px;
+  height: 300px;
+  width: 300px;
+  margin-left: -150px;
+  left: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+#pointdisplay .pointer {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  transform-origin: 100% 100%;
+}
+
+#pointdisplay .cover {
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  top: 5px;
+  left: 5px;
+  background-color: white;
+}
+
+#pointdisplay p {
+  background: linear-gradient(to right, #0A6E78 20%, #3CD2DC 80%), #222;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 200px;
+  text-align: center;
+  font-family: 'Fjalla One';
+  width: 200px;
+  height: 200px;
+  margin: 50px 0 0 50px;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 64;
+  border: 1px solid black;
+}
+
+#setNum{
+  width: 305px;
+  margin: 60px auto 20px auto;
+  position: relative;
+}
+
+#numInput, #submitNum{
+  width: 150px;
+  height: 60px;
+  margin: 0 5px;
+  border-radius: 30px;
+  border: none;
+  background: transparent;
+  box-sizing: border-box;
+  border: 2px solid #0A6E78;
+  outline: none;
+  color: #0A6E78;
+  font-size: 18px;
+  margin: 0;
+	padding: 0;
+}
+
+#numInput{
+  padding: 0 20px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+#submitNum:hover{
+  cursor: pointer;
+}
+
+.instructions{
+  text-align: center;
+  color: #0A6E78;
+  font-family: sans-serif;
+}
+footer{
+  width: 100%;
+  position: absolute;
+  bottom: 5%;
+  text-align: center;
+  color: #444;
+}
+
+
+.three-scores {
+  display: flex;
+}
+.three-scores > div {
+  flex: 1; /*grow*/
 }

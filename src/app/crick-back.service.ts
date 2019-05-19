@@ -28,9 +28,9 @@ export class CrickBackService {
   }
 
   postPlayers(players): Observable<any> {
-    return this.http.post<any>(this.endpoint + 'selectedPlayers/', JSON.stringify(players), this.httpOptions).pipe(
-      tap((player) => console.log(`added player w/ id=${player.id}`)),
-      catchError(this.handleError<any>('addPlyer'))
+    return this.http.post<any>(this.endpoint + 'selected_players/', JSON.stringify(players), this.httpOptions).pipe(
+      tap((player) => console.log(`Fetched Results`))
+     
     );
   }
 
