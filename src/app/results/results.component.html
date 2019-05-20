@@ -1,51 +1,47 @@
-<div id="screen">
-  <div *ngFor="let cricketer of playerList; let i = index" (click)="playerSelect(cricketer.id)">
+<div id="screen" >
+  <div *ngFor="let cricketer of playerList; let i = index" (click)="playerSelect(cricketer.id)" >
     <input type="radio" name="contatcs" id="contact-{{cricketer.id}}">
     <div class="item">
       <div class="portrait" id="P-{{cricketer.id}}"></div>
       <div class="details">
-        <p class="name">{{cricketer.player_name}}</p>
-        <p class="description">Developer</p>
+        <p class="name">{{cricketer.player_name |titlecase}}</p>
+        <p class="description">Right Hand Bat</p>
         <div class="actions">
-          <div class="mail">&#9993;</div>
-          <div class="text">&#59168;</div>
-          <div class="call">&#128222;</div>
-          <div class="info"></div>
+          <div class="entypo-chart-line"></div>
+          <div class="entypo-help"></div>
+          <div class="entypo-user"></div>
+          <div class="entypo-level-down"></div>
         </div>
       </div>
       <label for="contact-{{cricketer.id}}"></label>
     </div>
   </div>
 
-  <div id="background"></div>
+  <div id="background" ></div>
 </div>
-<div class="results-page">
+<div class="results-page" >
 
   <!-- <div class="selected-players">Selected Players <i class="fas fa-level-down-alt"></i></div> -->
   <div class="border-wrap-right" id="overflow-style">
     <div id='parent_div_2'>
-      <mat-card class="card-picture">
+      <mat-card class="player-card-result-{{currentPlayerId}} card-result">
+         <!-- <mat-card-image> <br><br><br> -->
         <mat-card-title>
-          <img mat-card-image src='../assets/images/1.png' class="results-image round"> <br>
-          <span class="results-title">{{currentPlayerName}}</span>
-          <mat-icon><i class="fas fa-eye"></i></mat-icon>
+         
+         
+          <!-- <mat-icon><i class="fas fa-eye"></i></mat-icon> -->
 
           <!-- <mat-icon fxFlex="10%">del ete</mat-icon> -->
         </mat-card-title>
         <!-- <img mat-card-image src='../assets/images/1.png' class="round"> -->
 
-        <div id="pointdisplay">
-          <div class="pointer pointer1"></div>
-          <div class="pointer pointer2"></div>
-          <div class="pointer pointer3"></div>
-          <div class="pointer pointer4"></div>
-          <div class="cover"></div>
-          <p id="point-p">{{(crickmlScore * 100)}}</p>
-        </div>
+
 
       </mat-card>
     </div>
   </div>
+  <span class="results-title">{{currentPlayerName |titlecase}}</span> <br>
+  <span class="results-info">Right Hand Bat</span>
   <br>
   <!-- <button (click)='clicked()'>Animate</button> -->
   <div class="three-scores">
@@ -55,34 +51,47 @@
         <mat-card-title>
           Experience Score
         </mat-card-title>
-        {{overallScore}}
+        <div class="three-score">{{overallScore}} </div>
       </mat-card>
     </div>
 
     <div>
-      <mat-card class="three-score-2">
+        <mat-card class="three-scores-2">
         <mat-card-title>
           Recent Score
         </mat-card-title>
-        {{recentScore}}
-      </mat-card>
-    </div>
-
-    <div>
-      <mat-card class="three-scores-3">
-        <mat-card-title>
-          Away Score
-        </mat-card-title>
-        {{awayScore}}
+        <div class="three-score">{{recentScore}}</div>
       </mat-card>
     </div>
 
     <div>
         <mat-card class="three-scores-3">
-          <mat-card-title>
-            Home Score
-          </mat-card-title>
-          {{homeScore}}
-        </mat-card>
-      </div>
+        <mat-card-title>
+          Away Score
+        </mat-card-title>
+        <div class="three-score">{{awayScore}}</div>
+      </mat-card>
+    </div>
+
+    <div>
+        <mat-card class="three-scores-4">
+        <mat-card-title>
+          Home Score
+        </mat-card-title>
+        <div class="three-score">{{homeScore}}</div>
+      </mat-card>
+    </div>
   </div>
+  <br>
+  <span class="score-info">CrickML Score</span> <br> <br>
+  <mat-card class="score-display">
+  <div id="pointdisplay">
+    <div class="pointer pointer1"></div>
+    <div class="pointer pointer2"></div>
+    <div class="pointer pointer3"></div>
+    <div class="pointer pointer4"></div>
+    <div class="cover"></div>
+    <p id="point-p">{{(crickmlScore)}}</p>
+  </div>
+
+</mat-card>

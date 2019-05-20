@@ -1,4 +1,4 @@
-var disp = $("#point-p");
+var disp = $("#pointdisplay p");
 circle(parseInt(disp.html()));
 
 function ticker(newer, older) {
@@ -34,7 +34,7 @@ function circle(points) {
   var sea = "#0A6E78";
   var blue = "#3CD2DC";
   var red = "#F00";
-  var grey = "#444";
+  var grey = "#fff";
   var shade = "inset 0 0 0 5px ";
   var clr = blue;
   var max = 100;
