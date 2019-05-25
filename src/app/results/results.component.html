@@ -1,5 +1,5 @@
-<div id="screen" >
-  <div *ngFor="let cricketer of playerList; let i = index" (click)="playerSelect(cricketer.id)" >
+<div id="screen">
+  <div *ngFor="let cricketer of playerList; let i = index" (click)="playerSelect(cricketer.id)">
     <input type="radio" name="contatcs" id="contact-{{cricketer.id}}">
     <div class="item">
       <div class="portrait" id="P-{{cricketer.id}}"></div>
@@ -17,18 +17,18 @@
     </div>
   </div>
 
-  <div id="background" ></div>
+  <div id="background"></div>
 </div>
-<div class="results-page" >
+<div class="results-page">
 
   <!-- <div class="selected-players">Selected Players <i class="fas fa-level-down-alt"></i></div> -->
   <div class="border-wrap-right" id="overflow-style">
     <div id='parent_div_2'>
       <mat-card class="player-card-result-{{currentPlayerId}} card-result">
-         <!-- <mat-card-image> <br><br><br> -->
+        <!-- <mat-card-image> <br><br><br> -->
         <mat-card-title>
-         
-         
+
+
           <!-- <mat-icon><i class="fas fa-eye"></i></mat-icon> -->
 
           <!-- <mat-icon fxFlex="10%">del ete</mat-icon> -->
@@ -56,7 +56,7 @@
     </div>
 
     <div>
-        <mat-card class="three-scores-2">
+      <mat-card class="three-scores-2">
         <mat-card-title>
           Recent Score
         </mat-card-title>
@@ -65,7 +65,7 @@
     </div>
 
     <div>
-        <mat-card class="three-scores-3">
+      <mat-card class="three-scores-3">
         <mat-card-title>
           Away Score
         </mat-card-title>
@@ -74,7 +74,7 @@
     </div>
 
     <div>
-        <mat-card class="three-scores-4">
+      <mat-card class="three-scores-4">
         <mat-card-title>
           Home Score
         </mat-card-title>
@@ -85,13 +85,13 @@
   <br>
   <span class="score-info">CrickML Score</span> <br> <br>
   <mat-card class="score-display">
-  <div id="pointdisplay">
-    <div class="pointer pointer1"></div>
-    <div class="pointer pointer2"></div>
-    <div class="pointer pointer3"></div>
-    <div class="pointer pointer4"></div>
-    <div class="cover"></div>
-    <p id="point-p">{{(crickmlScore)}}</p>
-  </div>
+    <div id="pointdisplay">
+      <div class="pointer pointer1"></div>
+      <div class="pointer pointer2"></div>
+      <div class="pointer pointer3"></div>
+      <div class="pointer pointer4"></div>
+      <div class="cover"></div>
+      <p id="point-p">{{(crickmlScore)}}</p>
+    </div>
 
-</mat-card>
+  </mat-card>

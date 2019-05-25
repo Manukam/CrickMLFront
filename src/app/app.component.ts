@@ -71,7 +71,7 @@ export class AppComponent {
     const dialogRef = this.dialog.open(ResultsComponent, {
       width: '100%',
       height: '100%',
-      data: {players: poolPlayers, results: selectedPlayers}
+      data: { players: poolPlayers, results: selectedPlayers }
     });
   }
 }
