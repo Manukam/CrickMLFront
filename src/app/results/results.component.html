@@ -45,7 +45,7 @@
   <br>
   <!-- <button (click)='clicked()'>Animate</button> -->
   <div class="three-scores">
-    <div>
+    <div *ngIf="mileStoneScore == 0">
       <mat-card class="three-scores-1">
 
         <mat-card-title>
@@ -58,22 +58,22 @@
     <div>
       <mat-card class="three-scores-2">
         <mat-card-title>
-          Recent Score
+          {{mileStoneScore > 0? "Domestic Score" : "Recent Score"}}
         </mat-card-title>
-        <div class="three-score">{{recentScore}}</div>
+        <div class="three-score">{{mileStoneScore > 0? domesticScore : recentScore}}</div>
       </mat-card>
     </div>
 
     <div>
       <mat-card class="three-scores-3">
         <mat-card-title>
-          Away Score
+          {{mileStoneScore > 0? "Milestone Score" : "Away Score"}}
         </mat-card-title>
-        <div class="three-score">{{awayScore}}</div>
+        <div class="three-score">{{mileStoneScore > 0? mileStoneScore : awayScore}}</div>
       </mat-card>
     </div>
 
-    <div>
+    <div *ngIf="mileStoneScore == 0">
       <mat-card class="three-scores-4">
         <mat-card-title>
           Home Score
