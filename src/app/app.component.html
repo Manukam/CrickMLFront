@@ -14,7 +14,7 @@
 <div class="player-pool">Player Pool <i class="fas fa-level-down-alt"></i> </div>
 <div class="border-wrap-left" id="overflow-style">
 <div id='parent_div_1' cdkDropList #pool="cdkDropList" [cdkDropListData]="playerPool" [cdkDropListConnectedTo]="[selected]"
-  (cdkDropListDropped)="dropped($event)" fxLayout="row wrap" fxLayoutGap="5%" fxLayoutAlign="flex-start">
+  (cdkDropListDropped)="dropped_custom($event)" fxLayout="row wrap" fxLayoutGap="5%" fxLayoutAlign="flex-start">
 
   <mat-card class="card-picture" fxFlex="0 1 calc(33.3% - 32px)" *ngFor="let player of playerPool; let i = index" cdkDrag>
     <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">

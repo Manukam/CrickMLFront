@@ -50,6 +50,26 @@ export class AppComponent {
     }
   }
 
+
+  dropped_custom(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+      // console.log(event.container.data);
+      // this.selectedPlayers = event.container.data;
+    }
+  }
+
   getAllPlayers() {
     this.rest.getPlayers().subscribe((data: {}) => {
       // console.log(data);
