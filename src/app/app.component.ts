@@ -28,6 +28,8 @@ export class AppComponent {
 
   players: any = [];
 
+  selected = '1';
+
   dropped(event: CdkDragDrop<string[]>) {
     // console.log(event);
     if (event.previousContainer === event.container) {

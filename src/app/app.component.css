@@ -76,7 +76,7 @@ body {
   background-color: #000;
   position: absolute;
   width: 2px;
-  height: 80%;
+  height: 70%;
   /* top: 110px; */
   left: 50%;
   display: block;
@@ -111,8 +111,17 @@ img {
 .primary-button{
   width: 45%;
   height: 70px;
-  margin-right: -450px;
+  right: -90px;
   float: right;
+  top: 70px;
+}
+
+.primary-select{
+  width: 250px;
+  height: 10px;
+  right: -40px;
+  float: right;
+  top: 15px;
 }
 
 
@@ -217,9 +226,18 @@ img {
   font-size: 20px;
 }
 
-.mat-raised-button{
+.custom-btn{
   size: 20px !important;
   background-color:black!important;
+  line-height: 50px !important;
+  width: 150px !important;
+  margin-top: 10px !important;
+  margin-left: 40px;
+}
+
+.mat-raised-button{
+  size: 20px !important;
+  /* background-color:black!important; */
   line-height: 50px !important;
   width: 150px !important;
   margin-top: 10px !important;
