@@ -13,14 +13,17 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ResultsComponent } from './results/results.component';
+import { FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import {MatInputModule} from '@angular/material/input';
+import { ListFilterPipe } from '../app/filter-pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ResultsComponent
+    ResultsComponent,
+    ListFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatDialogModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
     MatSelectModule
   ],
   providers: [],

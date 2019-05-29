@@ -27,7 +27,8 @@ export class ResultsComponent implements OnInit {
   currentPlayerId: number;
   domesticScore = 0;
   mileStoneScore = 0;
-
+  searchKey: string;
+  
   constructor(
     public dialogRef: MatDialogRef<ResultsComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ResultsData) {
@@ -44,15 +45,15 @@ export class ResultsComponent implements OnInit {
     this.currentPlayerName = this.playerList.find(x => x.id == id).player_name;
     this.currentPlayer = this.resultList.find(x => x[0] == id);
     console.log(this.currentPlayer);
-    if (this.currentPlayer[7] == 1){
+    if (this.currentPlayer[7] == 1) {
       this.crickmlScore = Math.ceil(this.currentPlayer[2] * 100);
       this.mileStoneScore = 0;
-      this.domesticScore =  0;
+      this.domesticScore = 0;
     } else {
       this.crickmlScore = Math.ceil((this.currentPlayer[2] * 100) / 2);
       this.mileStoneScore = Math.ceil(this.currentPlayer[5] * 100);
       this.domesticScore = Math.ceil((this.currentPlayer[6] * 100));
-    } 
+    }
     this.overallScore = Math.ceil(this.currentPlayer[3] * 100);
     this.recentScore = Math.ceil(this.currentPlayer[4] * 100);
     this.awayScore = Math.ceil(this.currentPlayer[5] * 100);
