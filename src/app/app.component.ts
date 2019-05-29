@@ -47,9 +47,9 @@ export class AppComponent {
       );
       // console.log(event.container.data);
       this.selectedPlayers = event.container.data;
+      this.selectedPlayers.sort((a, b) => (a.id > b.id) ? 1 : -1);
     }
   }
-
 
   dropped_custom(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
