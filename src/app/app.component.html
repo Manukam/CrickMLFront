@@ -45,6 +45,13 @@
 </div>
 </div>
 
+<mat-form-field>
+  <mat-label>Select an option</mat-label>
+  <mat-select [(value)]="selected">
+    <mat-option>None</mat-option>
+    <mat-option value="option1">Option 1</mat-option>
+  </mat-select>
+</mat-form-field>
 <div class="primary-button">
 <!-- <button mat-fab color="primary" (click) = "analysePlayers()">Primary</button> -->
 <button mat-raised-button color="accent" (click) = "analysePlayers()" class="custom-btn">Analyze Players</button>
