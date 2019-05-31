@@ -1,6 +1,24 @@
 <mat-form-field class="example-full-width">
   <textarea matInput placeholder="Search for a player" [(ngModel)]="searchKey"></textarea>
 </mat-form-field>
+<!-- <h4>Sort By</h4> -->
+<mat-form-field class="sort-select">
+  <mat-label>Sort By</mat-label>
+  <mat-select [(value)]="sortMode" (selectionChange) = sortPlayers()>
+    <mat-option  value="2">
+      CrickML Score
+    </mat-option>
+    <mat-option  value="0">
+      Home Score
+    </mat-option>
+    <mat-option  value="3">
+      Experience Score
+    </mat-option>
+    <mat-option  value="4">
+      Recent Score
+    </mat-option>
+  </mat-select>
+</mat-form-field>
   <div id="screen">
   <div *ngFor="let cricketer of playerList | listFilter:searchKey" (click)="playerSelect(cricketer.id)">
     <input type="radio" name="contatcs" id="contact-{{cricketer.id}}">

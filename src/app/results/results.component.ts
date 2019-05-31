@@ -28,7 +28,9 @@ export class ResultsComponent implements OnInit {
   domesticScore = 0;
   mileStoneScore = 0;
   searchKey: string;
-  
+  sortMode: number;
+  order = [];
+  playerListCopy = [];
   constructor(
     public dialogRef: MatDialogRef<ResultsComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ResultsData) {
@@ -37,14 +39,14 @@ export class ResultsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.playerList);
+    console.log(this.resultList);
     this.playerSelect(this.resultList[0][0]);
   }
 
   playerSelect(id) {
     this.currentPlayerName = this.playerList.find(x => x.id == id).player_name;
     this.currentPlayer = this.resultList.find(x => x[0] == id);
-    console.log(this.currentPlayer);
+    // console.log(this.currentPlayer);
     if (this.currentPlayer[7] == 1) {
       this.crickmlScore = Math.ceil(this.currentPlayer[2] * 100);
       this.mileStoneScore = 0;
@@ -58,8 +60,22 @@ export class ResultsComponent implements OnInit {
     this.recentScore = Math.ceil(this.currentPlayer[4] * 100);
     this.awayScore = Math.ceil(this.currentPlayer[5] * 100);
     this.homeScore = Math.ceil(this.currentPlayer[6] * 100);
-    this.currentPlayerId = this.currentPlayer[0]
+    this.currentPlayerId = this.currentPlayer[0];
     ticker(this.crickmlScore, 0);
   }
+
+  sortPlayers() {
+    // console.log('event fired');
+    this.order = [];
+    this.resultList.sort((a, b) => (a[this.sortMode] > b[this.sortMode]) ? -1 : 1);
+    // tslint:disable-next-line:only-arrow-functions
+    this.resultList.forEach(item => this.order.push(item[0]));
+    // console.log(this.order);
+    this.playerListCopy = this.playerList;
+    this.playerList = [];
+    this.order.forEach(item => this.playerList.push(this.playerListCopy.find(x => x.id == item)));
+    // console.log(this.playerList);
+  }
+
 }
 
