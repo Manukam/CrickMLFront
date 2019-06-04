@@ -104,6 +104,7 @@
     </div>
   </div>
   <br>
+  <div *ngIf="resultMode == 1">
   <span class="score-info">CrickML Score</span> <br> <br>
   <mat-card class="score-display">
     <div id="pointdisplay">
@@ -114,5 +115,15 @@
       <div class="cover"></div>
       <p id="point-p">{{(crickmlScore)}}</p>
     </div>
-
   </mat-card>
+  </div>
+  <div *ngIf="resultMode == 2">
+      <span class="score-info">CrickML Class</span> <br> <br>
+      <mat-card class="score-display">
+          <i class="css-icon">
+              <span>{{crickmlScore}}</span>
+            </i>
+      </mat-card>
+      </div>
+
+

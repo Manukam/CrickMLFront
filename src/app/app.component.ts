@@ -28,7 +28,7 @@ export class AppComponent {
 
   players: any = [];
 
-  selected = '1';
+  mode: number;
 
   dropped(event: CdkDragDrop<string[]>) {
     // console.log(event);
@@ -78,6 +78,7 @@ export class AppComponent {
   }
 
   analysePlayers() {
+    this.players.push([this.mode]);
     this.selectedPlayers.forEach(element => {
       this.players.push(element.id);
     });
@@ -89,7 +90,7 @@ export class AppComponent {
   }
 
   openDialog(poolPlayers, selectedPlayers): void {
-    console.log(selectedPlayers);
+    // console.log(selectedPlayers);
     const dialogRef = this.dialog.open(ResultsComponent, {
       width: '100%',
       height: '100%',

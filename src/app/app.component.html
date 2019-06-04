@@ -55,7 +55,7 @@
 </mat-form-field>
 <div class="primary-button">
 <!-- <button mat-fab color="primary" (click) = "analysePlayers()">Primary</button> -->
-<button mat-raised-button color="accent" (click) = "analysePlayers()" [disabled]="selectedPlayers.length === 0" [ngClass]="{'custom-btn': selectedPlayers.length != 0}">Analyze Players</button>
+<button mat-raised-button color="accent" (click) = "analysePlayers()" [disabled]="selectedPlayers.length === 0 || mode == 0" [ngClass]="{'custom-btn': selectedPlayers.length != 0}">Analyze Players</button>
 </div>
 
 
